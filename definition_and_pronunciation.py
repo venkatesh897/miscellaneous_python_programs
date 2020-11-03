@@ -6,8 +6,11 @@ import playsound
 app_id = '46edff97'
 app_key = '7031f12a59d6840a62c487f6d18f55ff'
 
+try:
+  word_id = argv[1]
+except Exception:
+  word_id = input("Enter word: ")
 language = 'en-gb'
-word_id = input("Enter word: ")
 pronunciations = 'pronunciations'
 definitions = 'definitions'
 strictMatch = 'false'
