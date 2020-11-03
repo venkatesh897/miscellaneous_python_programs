@@ -2,7 +2,7 @@
 import smtplib 
    
 server = smtplib.SMTP('smtp.gmail.com', 587) 
-  
+
 server.starttls() 
 
 server.login("venkatesh.b.8.97@gmail.com", "aqwsderf3") 
