@@ -1,8 +1,6 @@
 #Framework to perform CRUD operations
 from generate_otp import framework_authentication
 
-
-
 menu_file = "Menu.cfg"
 fields_file = "fields_file.cfg"
 data_file = "Data.dat"
@@ -109,7 +107,6 @@ def delete_record():
 		save_record()
 		print("Record deactivated successfully.")
 
-
 def print_record(field_value):
 	index = 1
 	for field_name in field_names:
@@ -121,7 +118,6 @@ def save_record():
 	with open(data_file, 'w') as f_data:
 			f_data.write(str(records))
 	f_data.close()
-
 
 functionsList = [create_record, read_records,search_record,  update_record, delete_record, exit]
 
