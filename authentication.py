@@ -1,9 +1,10 @@
 #Generate OTP and validate
 import requests
 import random
+import sys
 
 def framework_authentication():
-	mobile_number = input("Enter mobile number: ")
+	mobile_number = int(sys.argv[1])
 
 	random_number = random.randint(1000,9999)
 
