@@ -16,3 +16,4 @@ def framework_authentication():
 	else:
 		print("Access denied.")
 		
+framework_authentication()
