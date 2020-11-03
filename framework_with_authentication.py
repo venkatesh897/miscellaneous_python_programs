@@ -1,5 +1,5 @@
 #Framework to perform CRUD operations
-from generate_otp import framework_authentication
+from authentication import framework_authentication
 
 menu_file = "Menu.cfg"
 fields_file = "fields_file.cfg"
