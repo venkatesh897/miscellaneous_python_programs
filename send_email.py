@@ -1,4 +1,4 @@
- 
+#Program to send mail
 import smtplib 
    
 server = smtplib.SMTP('smtp.gmail.com', 587) 
