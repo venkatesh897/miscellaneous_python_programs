@@ -3,7 +3,10 @@ import requests
 import random
 
 def framework_authentication():
-	mobile_number = input("Enter mobile number: ")
+	try:
+		mobile_number = argv[1]
+	else:
+		mobile_number = input("Enter mobile number: ")
 
 	random_number = random.randint(1000,9999)
 
