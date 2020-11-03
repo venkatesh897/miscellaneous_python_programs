@@ -1,3 +1,4 @@
+#Program to print definition and play pronunciation of a word
 import requests
 import json
 import playsound
