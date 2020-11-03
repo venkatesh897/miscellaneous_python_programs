@@ -4,7 +4,10 @@ import random
 import sys
 
 def framework_authentication():
-	mobile_number = int(sys.argv[1])
+	try:
+		mobile_number = sys.argv[1]
+	except Exception:
+		mobile_number = input("Enter mobile number: ")
 
 	random_number = random.randint(1000,9999)
 
