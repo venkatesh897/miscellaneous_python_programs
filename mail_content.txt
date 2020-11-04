@@ -1,7 +1,10 @@
-'''
-Hello,
-This is a test mail.
-In this mail we are sending some attachments.
-The mail is sent using Python SMTP library.
-Thank You
-'''
+"""
+From: <venkatesh.b.8.97@gmail.com>
+To: <venkateshbadarala99@gmail.com>
+MIME-Version: 1.0
+Content-type: text/html
+Subject: Test mail
+
+
+This mail is sent through python.
+"""
