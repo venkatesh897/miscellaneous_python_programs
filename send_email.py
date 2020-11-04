@@ -1,19 +1,24 @@
 #Program to send mail
 import smtplib 
+import getpass
+error_opening_file = 'File may not exist or error opening file.'
+
+sender_email_address = input("Enter email address: ")
+sender_email_password = getpass.getpass('Enter password: ')
+receiver_address = input("Enter reciever email address: ")
+
+try:
+	with open("mail_content.txt") as f_mail_content:
+		mail_content = f_mail_content.read()
+
+except Exception:
+	print(error_opening_file)
    
 server = smtplib.SMTP('smtp.gmail.com', 587) 
 
 server.starttls() 
 
-server.login("venkatesh.b.8.97@gmail.com", "aqwsderf3") 
+server.login(sender_email_address, sender_email_password) 
 
-message = """From: <venkatesh.b.8.97@gmail.com>
-To: <venkateshbadarala99@gmail.com>
-MIME-Version: 1.0
-Content-type: text/html
-Subject: Test mail
-
-This mail is sent through python.
-"""
-server.sendmail("venkatesh.b.8.97@gmail.com", "venkateshbadarala99@gmail.com", message) 
+server.sendmail(sender_email_address,receiver_address, mail_content) 
 server.quit() 
