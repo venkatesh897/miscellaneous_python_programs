@@ -9,7 +9,7 @@ import getpass
 error_opening_file = 'File may not exist or error opening file.'
 
 try:
-	with open("mail_content.txt") as f_mail_content:
+	with open("body.txt") as f_mail_content:
 		mail_content = f_mail_content.read()
 
 except Exception:
