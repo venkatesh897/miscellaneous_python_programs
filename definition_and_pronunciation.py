@@ -19,9 +19,13 @@ url = 'https://od-api.oxforddictionaries.com:443/api/v2/entries/' + language + '
 response = requests.get(url, headers = {'app_id': app_id, 'app_key': app_key})
 json_response = json.loads(response.text)
 
-pronunciation = str(json_response['results'][0]['lexicalEntries'][0]['entries'][0]['pronunciations'][0]['audioFile'])
+try:
+	pronunciation = str(json_response['results'][0]['lexicalEntries'][0]['entries'][0]['pronunciations'][0]['audioFile'])
 
-definition = str(json_response['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['definitions'][0])
 
-print("The definition for word %s is %s"%(word_id, definition))
-playsound.playsound(pronunciation, True)
+	definition = str(json_response['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['definitions'][0])
+
+	print("The definition for word %s is %s"%(word_id, definition))
+	playsound.playsound(pronunciation, True)
+except Exception:
+	print("Word not found.")
