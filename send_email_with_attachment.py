@@ -15,13 +15,13 @@ try:
 except Exception:
 	print(error_opening_file)
 
-#The mail addresses and password
+
 sender_email_address = input("Enter email address: ")
 sender_email_password = getpass.getpass('Enter password: ')
 
 receiver_address = input("Enter reciever email address: ")
 subject = input("Enter subject: ")
-#Setup the MIME
+
 message = MIMEMultipart()
 message['From'] = sender_email_address
 message['To'] = receiver_address
@@ -39,8 +39,17 @@ message.attach(payload)
 
 session = smtplib.SMTP('smtp.gmail.com', 587) 
 session.starttls() 
-session.login(sender_email_address, sender_email_password) 
+
+try:
+	session.login(sender_email_address, sender_email_password) 
+except Exception:
+	print("Invalid username and password.")
+	
 text = message.as_string()
-session.sendmail(sender_email_address, receiver_address, text)
-session.quit()
-print('Mail Sent')
+
+try:
+	session.sendmail(sender_email_address, receiver_address, text)
+	session.quit()
+	print('Mail Sent')
+except Exception:
+	print("Error sending mail.")
